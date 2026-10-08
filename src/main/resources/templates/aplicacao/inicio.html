@@ -1,0 +1,9 @@
+<!DOCTYPE html><html lang="pt-BR" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="~{fragmentos/estrutura :: cabeca('Início')}"></head><body>
+<header th:replace="~{fragmentos/estrutura :: topo}"></header>
+<!-- ------------------------------------------------------------------------------------- -->
+<main class="central"><section class="cartao"><span class="etiqueta">SEU ESPAÇO</span><h1>Olá, seja bem vindo.</h1><p>Você entrou como <strong sec:authentication="name"></strong>.</p>
+<a class="botao" sec:authorize="hasRole('ALUNO')" th:href="@{/aluno}">Acessar área do aluno</a>
+<a class="botao" sec:authorize="hasRole('PROFESSOR')" th:href="@{/professor}">Acessar área do professor</a>
+<a class="botao" sec:authorize="hasRole('ADMINISTRADOR')" th:href="@{/administrador}">Acessar área do administrador</a>
+</section></main><footer th:replace="~{fragmentos/estrutura :: rodape}"></footer></body></html>

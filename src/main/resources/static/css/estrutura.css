@@ -1,0 +1,32 @@
+/* ------------------------------------------------------------------------------------- */
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; font-family: Arial, sans-serif; background: var(--fundo); color: var(--texto); }
+header { max-width: 1200px; margin: auto; padding: 26px 6%; display: flex; align-items: center; justify-content: space-between; }
+a { color: var(--link); text-underline-offset: 4px; }
+.marca { font-size: 48px; font-weight: 800; letter-spacing: -3px; color: var(--texto); text-decoration: none; }
+.ponto { color: var(--destaque); }
+/* ------------------------------------------------------------------------------------- */
+.entrada { max-width: 1200px; margin: 35px auto; padding: 0 6%; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+.central { max-width: 640px; padding: 20px; margin: 30px auto; }
+.cartao { padding: 36px; background: var(--cartao); border: 1px solid var(--borda); border-radius: var(--raio); }
+h1 { font-size: 34px; line-height: 1.15; margin: 18px 0; }
+.apresentacao h1 { font-size: clamp(36px, 4vw, 52px); }
+h2 { font-size: 27px; margin: 0 0 24px; }
+p { line-height: 1.6; overflow-wrap: anywhere; }
+.etiqueta { font-size: 12px; letter-spacing: 2px; font-weight: bold; }
+/* ------------------------------------------------------------------------------------- */
+label { display: block; margin: 20px 0 8px; font-weight: bold; font-size: 14px; }
+input { width: 100%; border: 1px solid var(--borda); border-radius: 8px; padding: 13px; background: var(--campo); color: var(--texto); font: inherit; }
+button, .botao { display: inline-block; width: 100%; margin-top: 26px; padding: 14px; border: 1px solid var(--texto); border-radius: 8px; background: var(--destaque); color: var(--texto); cursor: pointer; text-align: center; font: bold 16px Arial, sans-serif; text-decoration: none; }
+.secundario { width: auto; margin: 0; background: transparent; }
+:focus-visible { outline: 3px solid var(--link); outline-offset: 3px; }
+.aviso { border-left: 4px solid var(--link); padding: 10px 16px; background: var(--campo); }
+.aviso p { margin: 4px 0; }
+small { display: block; margin-top: 8px; line-height: 1.5; }
+footer { text-align: center; padding: 32px 20px; font-size: 13px; }
+.formas { display: flex; gap: 14px; margin-top: 38px; }
+.formas i { width: 70px; height: 70px; border-radius: 50%; background: var(--destaque); }
+.formas i:nth-child(2) { background: var(--apoio); border-radius: 12px; transform: rotate(12deg); }
+.formas i:nth-child(3) { background: var(--acento); border-radius: 50% 50% 5px 5px; }
+/* ------------------------------------------------------------------------------------- */
+@media (max-width: 760px) { .entrada { grid-template-columns: 1fr; gap: 30px; margin: 10px auto; } .cartao { padding: 25px; } .formas { display: none; } h1 { font-size: 29px; } }
