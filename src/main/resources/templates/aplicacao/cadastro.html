@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragmentos/estrutura :: cabeca('Cadastro')}"></head>
+<body><header th:replace="~{fragmentos/estrutura :: topo}"></header>
+<!-- ------------------------------------------------------------------------------------- -->
+<main class="central"><section class="cartao"><span class="etiqueta">FAÇA PARTE</span><h1>Crie sua conta</h1>
+<form th:action="@{/cadastro}" th:object="${cadastro}" method="post">
+<div class="aviso" role="alert" th:if="${#fields.hasAnyErrors()}"><p th:each="erro : ${#fields.allErrors()}" th:text="${erro}"></p></div>
+<label for="nome">Nome</label><input id="nome" th:field="*{nome}" minlength="2" maxlength="80" autocomplete="name" required>
+<label for="email">Email</label><input id="email" th:field="*{email}" type="email" maxlength="254" autocomplete="email" required>
+<label for="senha">Senha</label><input id="senha" name="senha" type="password" minlength="12" maxlength="72" autocomplete="new-password" aria-describedby="ajuda" required>
+<small id="ajuda">Use pelo menos 12 caracteres e no máximo 72 bytes.</small>
+<label for="confirmacao">Confirme a senha</label><input id="confirmacao" name="confirmacao" type="password" minlength="12" maxlength="72" autocomplete="new-password" required>
+<button type="submit">Criar conta</button></form><p>Já possui conta? <a th:href="@{/login}">Entrar</a></p>
+</section></main><footer th:replace="~{fragmentos/estrutura :: rodape}"></footer></body></html>
