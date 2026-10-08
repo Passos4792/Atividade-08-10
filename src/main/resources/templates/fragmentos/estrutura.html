@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:fragment="cabeca(titulo)">
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${titulo} + ' | Elo'">Elo</title>
+    <link rel="stylesheet" th:href="@{/css/estrutura.css}">
+    <link rel="stylesheet" th:href="@{'/temas/' + ${tema} + '/tema.css'}">
+</head>
+<!-- ------------------------------------------------------------------------------------- -->
+<body>
+<header th:fragment="topo">
+    <a class="marca" th:href="@{/inicio}">elo<span class="ponto">.</span></a>
+    <form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post"><button class="secundario" type="submit">Sair</button></form>
+</header>
+<footer th:fragment="rodape">Elo · Conectando pessoas com segurança</footer>
+</body></html>

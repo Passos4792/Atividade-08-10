@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragmentos/estrutura :: cabeca('Entrar')}"></head>
+<body><header th:replace="~{fragmentos/estrutura :: topo}"></header>
+<!-- ------------------------------------------------------------------------------------- -->
+<main class="entrada"><section class="apresentacao"><span class="etiqueta">BEM VINDO AO ELO</span><h1>Um espaço para<br>se conectar.</h1><p>Entre na sua conta para acessar seu espaço.</p><div class="formas" aria-hidden="true"><i></i><i></i><i></i></div></section>
+<section class="cartao"><h2>Entre na sua conta</h2>
+<p class="aviso" role="alert" th:if="${param.erro}">Email ou senha inválidos.</p>
+<p class="aviso" th:if="${param.saiu}">Você saiu da sua conta.</p>
+<p class="aviso" th:if="${param.cadastrado}">Cadastro realizado. Entre para continuar.</p>
+<form th:action="@{/login}" method="post">
+<label for="email">Email</label><input id="email" name="email" type="email" maxlength="254" autocomplete="username" required>
+<label for="senha">Senha</label><input id="senha" name="senha" type="password" maxlength="72" autocomplete="current-password" required>
+<button type="submit">Entrar</button></form>
+<p>Ainda não tem uma conta? <a th:href="@{/cadastro}">Cadastre-se</a></p></section></main>
+<footer th:replace="~{fragmentos/estrutura :: rodape}"></footer></body></html>
